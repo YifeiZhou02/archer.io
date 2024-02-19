@@ -129,17 +129,6 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img id="teaser" src="./static/images/archer_diagram.001.jpeg" >
-      <h2 class="subtitle has-text-centered">
-        <strong>ArCHer</strong>: <strong>A</strong>cto<strong>r</strong>-<strong>C</strong>ritic 
-  Framework with a <strong>H</strong>i<strong>e</strong>rarchical Structu<strong>r</strong>e
-      </h2>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -171,6 +160,17 @@ Empirically, we show that ArCHer significantly improves efficiency and performan
   </div>
 </section>
 
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="./static/images/archer_diagram.001.jpeg" >
+      <h2 class="subtitle has-text-centered">
+        <strong>ArCHer</strong>: <strong>A</strong>cto<strong>r</strong>-<strong>C</strong>ritic 
+  Framework with a <strong>H</strong>i<strong>e</strong>rarchical Structu<strong>r</strong>e
+      </h2>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -189,8 +189,8 @@ Empirically, we show that ArCHer significantly improves efficiency and performan
           </p>
           <p>
             Despite these "multi-turn" use cases, most methods for eliciting goal-directed behavior from LLMs often rely on "myopic" objectives that either attempt to mimic successful demonstrations, 
-            or otherwise optimize for single-turn human preferences (single-turn RLHF). Policies trained via single-turn approaches often fail to do appropriate credit assignment (e.g. fail to identify good actions from suboptimal trajectories) 
-            and degrade in performance as the length of interaction increases. To address this problem, we apply "multi-turn" RL to directly maximize the long-term 
+            or otherwise optimize for single-turn human preferences (single-turn RLHF). Policies trained via single-turn approaches degrade in performance as the length of interaction increases. 
+            To address this problem, we apply "multi-turn" RL to directly maximize the long-term 
             objective of interest (e.g., customer satisfaction at the end of a multi-turn conversation with an LLM assistant), which can be formulated as scalar rewards.
           </p>
         </div>
