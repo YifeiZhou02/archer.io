@@ -160,17 +160,6 @@ Empirically, we show that ArCHer significantly improves efficiency and performan
   </div>
 </section>
 
-  <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img id="teaser" src="./static/images/archer_diagram.001.jpeg" >
-      <h2 class="subtitle has-text-centered">
-        <strong>ArCHer</strong>: <strong>A</strong>cto<strong>r</strong>-<strong>C</strong>ritic 
-  Framework with a <strong>H</strong>i<strong>e</strong>rarchical Structu<strong>r</strong>e
-      </h2>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -200,6 +189,54 @@ Empirically, we show that ArCHer significantly improves efficiency and performan
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Why do we need a hierarchical structure for LLM?</h2>
+
+
+        <div class="content has-text-justified">
+          <p>
+            Prior works in RL for LLMs either run entirely at the token level or at the utterance (a sequence of tokens) level, but they face different challenges:
+            <ul>
+                <li>Token-level methods face the challenge of an extremely long horizon (number of tokens per round * number of interactions), leading to numerical instabilities and slow convergence</li>
+                <li>Utterance-level methods face the challenge of an exponential action space (exponential in the number of tokens per utterance), resulting in  difficulty in optimizing over such large action space</li>
+            </ul>
+          </p>
+          <p>
+            Our ArCHer for RL with language models can enjoy the best of both worlds, 
+            where an off-policy temporal difference learning method can train an utterance-level value function at the high level, 
+            and any policy gradient algorithm can optimize the token generation at each turn of the interaction at the low level, treating the high-level value function as the terminal reward for that turn.
+          </p>
+          <p>
+            This allows for sample reuse and faster convergence, while avoiding the need to perform Bellman backups over each individual token, as the high-level critic is trained 
+            at a coarser time-scale given by utterances. It also directly inherits tuning implementations from any 
+            existing token-level policy gradient algorithm that has been developed for single-turn RL with preferences, 
+            but with the utterance-level value function inheriting the role of the reward model. This way we are able to obtain the best of both utterance-based and token-based, 
+            and off-policy and on-policy approaches for training LLMs.
+          </p>
+        </div>
+        <br/>
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" src="./static/images/archer_diagram.001.jpeg" >
+      <h2 class="subtitle has-text-centered">
+        <strong>ArCHer</strong>: <strong>A</strong>cto<strong>r</strong>-<strong>C</strong>ritic 
+  Framework with a <strong>H</strong>i<strong>e</strong>rarchical Structu<strong>r</strong>e
+      </h2>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
